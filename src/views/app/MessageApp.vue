@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 const router = useRouter()
-import { ref } from 'vue'
-const userName = ref('Kemi ventures')
-const userEmail = ref('kemiventures@click.com')
+import { ref, onMounted } from 'vue'
+const userName = ref('') as any
+const userEmail = ref('') as any
 const activeMsg = ref(0)
 const goHome = () => {
     router.push('/home_application')
@@ -11,6 +11,13 @@ const goHome = () => {
 const goFinance = () => {
     router.push('/finance')
 }
+const displayUser = () => {
+    userName.value = localStorage.getItem('name')
+    userEmail.value = localStorage.getItem('email')
+}
+onMounted(() => {
+    displayUser();
+})
 </script>
 <template>
     <main class="bg-[#fff] hidden md:hidden lg:block min-h-[100vh] w-full">

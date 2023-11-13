@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 const router = useRouter()
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import FinanceBoard from '@/components/utils/FinanceBoard.vue'
-const userName = ref('Kemi ventures')
-const userEmail = ref('kemiventures@click.com')
+const userName = ref('') as any
+const userEmail = ref('') as any
 
 const goHome = () => {
     router.push('/home_application')
@@ -12,6 +12,13 @@ const goHome = () => {
 const goMessage = () => {
     router.push('/message')
 }
+const displayUser = () => {
+    userName.value = localStorage.getItem('name')
+    userEmail.value = localStorage.getItem('email')
+}
+onMounted(() => {
+    displayUser();
+})
 </script>
 <template>
     <main class="bg-[#fff] hidden md:hidden lg:block min-h-[100vh] w-full">
