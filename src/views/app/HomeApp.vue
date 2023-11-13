@@ -1,18 +1,23 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 const router = useRouter()
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import DashBoard from '@/components/utils/DashBoard.vue'
-const userName = ref('Kemi ventures')
-const userEmail = ref('kemiventures@click.com')
-const standaloneName = ref('Kemi')
-
+const name = ref("") as any
+const email = ref("") as any
 const goFinance = () => {
     router.push('/finance')
 }
 const goMessage = () => {
     router.push('/message')
 }
+const displayUser = () => {
+    name.value = localStorage.getItem('name')
+    email.value = localStorage.getItem('email')
+}
+onMounted(() => {
+    displayUser();
+})
 </script>
 <template>
     <main class="bg-[#fff] hidden md:hidden lg:block min-h-[100vh] w-full">
@@ -25,10 +30,10 @@ const goMessage = () => {
                 <div class="w-[42px] h-[42px] bg-[#d9d9d9] rounded-full"></div>
                 <div class="space-y-[3px]">
                     <div class="text-[#101828] hanken text-[22px] font-[600]">
-                        {{ userName }}
+                        {{ name }}
                     </div>
                     <div class="text-[#808080] hanken text-[16px] font-[500]">
-                        {{ userEmail }}
+                        {{ email }}
                     </div>
                 </div>
             </div>
@@ -54,7 +59,7 @@ const goMessage = () => {
                 </div>
             </div>
             <div class="w-[85%] mb-[112px] side h-fit overflow-y-scroll bg-[#fff]">
-                <DashBoard :name="standaloneName" />
+                <DashBoard :name="name" />
             </div>
         </div>
         <!---->

@@ -7,6 +7,8 @@ import HomeApp from '../views/app/HomeApp.vue'
 import FinanceApp from '../views/app/FinanceApp.vue'
 //@ts-ignore
 import MessageApp from '../views/app/MessageApp.vue'
+//@ts-ignore
+import LoginView from '../views/LoginView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,6 +17,11 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginView
     },
     {
       path: '/about',
