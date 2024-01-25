@@ -1,10 +1,10 @@
 <template>
     <div class="pt-[110px] pl-[20px] md:pl-[100px] pr-[20px] w-full">
         <div
-            class="w-full mb-[20px] space-y-[50px] md:space-y-[50px] lg:space-y-[50px] xl:space-y-[0px] block xl:space-x-[10px] lg:space-x-[0px] lg:block xl:flex">
+            class="w-full mb-[20px] space-y-[50px] md:space-y-[50px] lg:space-y-[50px] xl:space-y-[0px] block xl:space-x-[20px] lg:space-x-[0px] lg:block xl:flex">
             <div
                 class="xl:w-[55%] w-full h-fit lg:h-fit xl:h-[386px] lg:w-full bg-[#fff] border border-[#edf2f7] rounded-[14px] py-[21.5px] px-[20px]">
-                <div class="flex w-full mb-[21.5px] justify-between items-center">
+                <div class="flex w-full mb-[21.5px] xl:mb-[2px] justify-between items-center">
                     <div class="text-[#26282c] plus leading-[26px] font-[600] text-[18px]">
                         Sales Trends
                     </div>
@@ -27,8 +27,9 @@
                     </div>
                 </div>
                 <!--canvas-->
-                <div class="w-[100%] h-fit xl:h-[280px]">
-                    <canvas id="myChart" class="w-full leading-[16px] font-[600] plus text-[12px] h-full"></canvas>
+                <div class="w-[100%] h-fit xl:h-[310px]">
+                    <canvas id="myChart"
+                        class="w-full object-cover leading-[16px] font-[600] plus text-[12px] h-full"></canvas>
                 </div>
                 <!---->
             </div>
@@ -36,7 +37,7 @@
             <div class="xl:w-[45%] lg:w-full w-full">
                 <div class="md:flex block mb-[16px] md:space-x-[8px] w-full">
                     <div
-                        class="rounded-[14px] p-[16px] mb-[10px] md:mb-[0px] w-full md:w-[50%] bg-[#fff] border-[#edf2f7] border">
+                        class="rounded-[14px] mb-[10px] md:mb-[10px] p-[16px] w-full md:w-[50%] bg-[#fff] border-[#edf2f7] border">
                         <div class="flex mb-[10px] justify-between items-center">
                             <div class="p-[8px] border-[#e6e6e6] border flex items-center h-[40px] w-[40px] rounded-full">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -56,8 +57,8 @@
                                 </svg>
                             </div>
                             <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="106" height="33" viewBox="0 0 106 33"
-                                    fill="none">
+                                <svg class="lineone" xmlns="http://www.w3.org/2000/svg" width="106" height="33"
+                                    viewBox="0 0 106 33" fill="none">
                                     <path
                                         d="M102.994 8.46666H105V33L1 33V11.4536L4.00877 18.9203L5.20413 21.9069H6.60551L9.40827 18.9203L11.3702 21.907L17.256 21.9072L20.339 18.9204L22.0207 14.4396L24.4683 16.6803L26.6747 18.9203L27.3638 22.3333L28.7651 21.9069H30.4858L33.6952 11.4536L34.6981 14.4403L36.3028 11.4536L37.5063 16.6803L40.7156 7.72028L42.5209 11.4536H45.9308L49.5413 3.98696L51.7477 7.72028L54.6535 5.48L58.194 11.4533L60.4704 1L62.1179 11.4533L73.1072 15.9333L74.5113 12.9466H75.9153L79.1247 8.46666H82.334L83.5375 12.9466L88.3515 3.98666L90.3574 15.9333L91.3603 11.4533H93.5667L95.5726 1L97.5784 9.95999L98.5813 5.48H101.189L102.994 8.46666Z"
                                         fill="url(#paint0_linear_2132_4599)" fill-opacity="0.16" />
@@ -107,8 +108,8 @@
                         class="rounded-[14px] mb-[10px] md:mb-[10px] p-[16px] w-full md:w-[50%] bg-[#fff] border-[#edf2f7] border">
                         <div class="flex mb-[10px] justify-between items-center">
                             <div class="p-[8px] border-[#e6e6e6] border flex items-center h-[40px] w-[40px] rounded-full">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
+                                <svg class="refund" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
                                         d="M7.57821 2.91194C4.8091 3.55436 2.75 6.03342 2.75 9C2.75 9.41421 2.41421 9.75 2 9.75C1.58579 9.75 1.25 9.41421 1.25 9C1.25 4.71579 4.71579 1.25 9 1.25C9.2702 1.25 9.51952 1.39534 9.65265 1.63047C9.78578 1.8656 9.78214 2.15417 9.64312 2.38587L8.59313 4.13587C8.38002 4.49105 7.91933 4.60623 7.56414 4.39312C7.20896 4.18001 7.09378 3.71932 7.30689 3.36413L7.57821 2.91194ZM22 14.25C22.4142 14.25 22.75 14.5858 22.75 15C22.75 19.2842 19.2842 22.75 15 22.75C14.7298 22.75 14.4805 22.6047 14.3474 22.3695C14.2142 22.1344 14.2179 21.8458 14.3569 21.6141L15.4069 19.8641C15.62 19.5089 16.0807 19.3938 16.4359 19.6069C16.791 19.82 16.9062 20.2807 16.6931 20.6359L16.4218 21.0881C19.1909 20.4456 21.25 17.9666 21.25 15C21.25 14.5858 21.5858 14.25 22 14.25Z"
                                         fill="#34CAA5" />
@@ -124,8 +125,8 @@
                                 </svg>
                             </div>
                             <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="106" height="33" viewBox="0 0 106 33"
-                                    fill="none">
+                                <svg class="linetwo" xmlns="http://www.w3.org/2000/svg" width="106" height="33"
+                                    viewBox="0 0 106 33" fill="none">
                                     <path
                                         d="M3.00584 8.46666H1L1 33L105 33V11.4536L101.991 18.9203L100.796 21.9069H99.3945L96.5917 18.9203L94.6298 21.907L88.744 21.9072L85.661 18.9204L83.9793 14.4396L81.5317 16.6803L79.3253 18.9203L78.6362 22.3333L77.2349 21.9069H75.5142L72.3048 11.4536L71.3019 14.4403L69.6972 11.4536L68.4937 16.6803L65.2844 7.72028L63.4791 11.4536H60.0692L56.4587 3.98696L54.2523 7.72028L51.3465 5.48L47.806 11.4533L45.5296 1L43.8821 11.4533L32.8928 15.9333L31.4887 12.9466H30.0847L26.8753 8.46666H23.666L22.4625 12.9466L17.6485 3.98666L15.6426 15.9333L14.6397 11.4533H12.4333L10.4274 1L8.4216 9.95999L7.41868 5.48H4.81109L3.00584 8.46666Z"
                                         fill="url(#paint0_linear_2133_4687)" fill-opacity="0.16" />
@@ -195,8 +196,8 @@
                                 </svg>
                             </div>
                             <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="106" height="33" viewBox="0 0 106 33"
-                                    fill="none">
+                                <svg class="linethree" xmlns="http://www.w3.org/2000/svg" width="106" height="33"
+                                    viewBox="0 0 106 33" fill="none">
                                     <path
                                         d="M3.00584 8.46666H1L1 33L105 33V11.4536L101.991 18.9203L100.796 21.9069H99.3945L96.5917 18.9203L94.6298 21.907L88.744 21.9072L85.661 18.9204L83.9793 14.4396L81.5317 16.6803L79.3253 18.9203L78.6362 22.3333L77.2349 21.9069H75.5142L72.3048 11.4536L71.3019 14.4403L69.6972 11.4536L68.4937 16.6803L65.2844 7.72028L63.4791 11.4536H60.0692L56.4587 3.98696L54.2523 7.72028L51.3465 5.48L47.806 11.4533L45.5296 1L43.8821 11.4533L32.8928 15.9333L31.4887 12.9466H30.0847L26.8753 8.46666H23.666L22.4625 12.9466L17.6485 3.98666L15.6426 15.9333L14.6397 11.4533H12.4333L10.4274 1L8.4216 9.95999L7.41868 5.48H4.81109L3.00584 8.46666Z"
                                         fill="url(#paint0_linear_2133_4778)" fill-opacity="0.16" />
@@ -259,8 +260,8 @@
                                 </svg>
                             </div>
                             <div>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="106" height="33" viewBox="0 0 106 33"
-                                    fill="none">
+                                <svg class="linefour" xmlns="http://www.w3.org/2000/svg" width="106" height="33"
+                                    viewBox="0 0 106 33" fill="none">
                                     <path
                                         d="M102.994 8.46666H105V33L1 33V11.4536L4.00877 18.9203L5.20413 21.9069H6.60551L9.40827 18.9203L11.3702 21.907L17.256 21.9072L20.339 18.9204L22.0207 14.4396L24.4683 16.6803L26.6747 18.9203L27.3638 22.3333L28.7651 21.9069H30.4858L33.6952 11.4536L34.6981 14.4403L36.3028 11.4536L37.5063 16.6803L40.7156 7.72028L42.5209 11.4536H45.9308L49.5413 3.98696L51.7477 7.72028L54.6535 5.48L58.194 11.4533L60.4704 1L62.1179 11.4533L73.1072 15.9333L74.5113 12.9466H75.9153L79.1247 8.46666H82.334L83.5375 12.9466L88.3515 3.98666L90.3574 15.9333L91.3603 11.4533H93.5667L95.5726 1L97.5784 9.95999L98.5813 5.48H101.189L102.994 8.46666Z"
                                         fill="url(#paint0_linear_2133_4739)" fill-opacity="0.16" />
@@ -322,6 +323,17 @@
 import { onMounted, ref } from 'vue';
 import Order from './Order.vue';
 // import { Chart } from 'chart.js'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/all';
+gsap.registerPlugin(ScrollTrigger)
+
+const rotateRefund = () => {
+    gsap.to('.refund', { duration: 2, repeat: -1, rotation: 360, scrollTrigger: { trigger: '.refund', toggleActions: 'restart' } });
+    gsap.fromTo('.lineone', { x: 0, width: 0 }, { x: 0, duration: 2, repeat: -1, width: 'auto', scrollTrigger: { trigger: '.lineone', toggleActions: 'restart' } })
+    gsap.fromTo('.linetwo', { x: 0, width: 0 }, { x: 0, duration: 2, repeat: -1, width: 'auto', scrollTrigger: { trigger: '.linetwo', toggleActions: 'restart' } })
+    gsap.fromTo('.linethree', { x: 0, width: 0 }, { x: 0, duration: 2, repeat: -1, width: 'auto', scrollTrigger: { trigger: '.linethree', toggleActions: 'restart' } })
+    gsap.fromTo('.linefour', { x: 0, width: 0 }, { x: 0, duration: 2, repeat: -1, width: 'auto', scrollTrigger: { trigger: '.linefour', toggleActions: 'restart' } })
+}
 
 const canvasRef = ref(null)
 
@@ -336,25 +348,54 @@ const renderChart = () => {
             datasets: [{
                 data: [5.000, 10.000, 3.000, 25.000, 8.000, 42.000, 9.000, 20.000, 32.000, 3.000, 28.000, 26.000, 50.000],
                 label: '',
-                backgroundColor: 'rgba(52, 202, 165, 0.10)',
-                borderRadius: 20
+                backgroundColor: [
+                    'rgba(52, 202, 165, 0.10)',
+                    'rgba(52, 202, 165, 0.10)',
+                    'rgba(52, 202, 165, 0.10)',
+                    'rgba(52, 202, 165, 0.10)',
+                    'rgba(52, 202, 165, 0.10)',
+                    '#dcfce7',
+                    'rgba(52, 202, 165, 0.10)',
+                    'rgba(52, 202, 165, 0.10)',
+                    'rgba(52, 202, 165, 0.10)',
+                    'rgba(52, 202, 165, 0.10)',
+                    'rgba(52, 202, 165, 0.10)',
+                    'rgba(52, 202, 165, 0.10)',
+                ],
+                borderRadius: 20,
+                legend: {
+                    display: false,
+                }
             }]
         },
         options: {
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    grid: {
+                        display: true,
+                        borderDash: [1, 1],
+                        color: '#EAEAEA'
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    }
+                },
+            },
+            plugins: {
+                legend: {
+                    display: false,
                 }
             }
         },
-        plugins: {
-            borderRadius: 20,
-        }
     });
 }
 
 onMounted(() => {
     renderChart();
+    rotateRefund();
 })
 </script>
 

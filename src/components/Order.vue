@@ -1,7 +1,7 @@
 <template>
     <div>
         <div
-            class="w-full overflow-x-auto md:overflow-x-hidden mb-[20px] space-y-[50px] xl:space-y-[0px] lg:space-y-[50px] lg:space-x-[0px] xl:space-x-[10px] block lg:block xl:flex">
+            class="w-full overflow-x-auto md:overflow-x-hidden mb-[20px] space-y-[50px] xl:space-y-[0px] lg:space-y-[50px] lg:space-x-[0px] xl:space-x-[20px] block lg:block xl:flex">
             <div
                 class="xl:w-[55%] md:w-full w-fit overflow-x-scroll md:overflow-x-hidden lg:h-fit xl:h-fit lg:w-full bg-[#fff] border border-[#edf2f7] rounded-[14px] py-[21.5px] px-[20px]">
                 <div class="flex mb-[14px] items-center justify-between">
@@ -243,7 +243,7 @@
                     Book Bazar
                 </div>
                 <div class="w-full mb-[16px] h-fit rounded-[40px] bg-[#f5f5f5]">
-                    <div class="h-[12px] w-[55%] rounded-[40px] bg-[#6160dc]"></div>
+                    <div class="h-[12px] lone w-[55%] rounded-[40px] bg-[#6160dc]"></div>
                 </div>
                 <div class="flex mb-[20px] items-center justify-between">
                     <div class="text-[#525252] leading-[26px] font-[400] plus text-[18px]">
@@ -257,7 +257,7 @@
                     Artisan Aisle
                 </div>
                 <div class="w-full mb-[16px] h-fit rounded-[40px] bg-[#f5f5f5]">
-                    <div class="h-[12px] w-[40%] rounded-[40px] bg-[#54C5EB]"></div>
+                    <div class="h-[12px] ltwo w-[40%] rounded-[40px] bg-[#54C5EB]"></div>
                 </div>
                 <div class="flex mb-[20px] items-center justify-between">
                     <div class="text-[#525252] leading-[26px] font-[400] plus text-[18px]">
@@ -271,7 +271,7 @@
                     Toy Troop
                 </div>
                 <div class="w-full mb-[16px] h-fit rounded-[40px] bg-[#f5f5f5]">
-                    <div class="h-[12px] w-[30%] rounded-[40px] bg-[#FFB74A]"></div>
+                    <div class="h-[12px] lthree w-[30%] rounded-[40px] bg-[#FFB74A]"></div>
                 </div>
                 <div class="flex mb-[20px] items-center justify-between">
                     <div class="text-[#525252] leading-[26px] font-[400] plus text-[18px]">
@@ -285,7 +285,7 @@
                     XStore
                 </div>
                 <div class="w-full mb-[16px] h-fit rounded-[40px] bg-[#f5f5f5]">
-                    <div class="h-[12px] w-[30%] rounded-[40px] bg-[#FF4A55]"></div>
+                    <div class="h-[12px] lfour w-[30%] rounded-[40px] bg-[#FF4A55]"></div>
                 </div>
                 <div class="flex mb-[0px] items-center justify-between">
                     <div class="text-[#525252] leading-[26px] font-[400] plus text-[18px]">
@@ -367,3 +367,22 @@
         </div>
     </div>
 </template>
+
+<script lang="ts" setup>
+import { gsap } from 'gsap';
+import { onMounted } from 'vue'
+
+import { ScrollTrigger } from 'gsap/all';
+gsap.registerPlugin(ScrollTrigger)
+
+const loadlines = () => {
+    gsap.fromTo('.lone', { x: 0, width: 0 }, { x: 0, duration: 2, width: '55%', scrollTrigger: { trigger: '.lone', toggleActions: 'restart' } })
+    gsap.fromTo('.ltwo', { x: 0, width: 0 }, { x: 0, duration: 2, width: '40%', scrollTrigger: { trigger: '.ltwo', toggleActions: 'restart' } })
+    gsap.fromTo('.lthree', { x: 0, width: 0 }, { x: 0, duration: 2, width: '30%', scrollTrigger: { trigger: '.lthree', toggleActions: 'restart' } })
+    gsap.fromTo('.lfour', { x: 0, width: 0 }, { x: 0, duration: 2, width: '30%', scrollTrigger: { trigger: '.lfour', toggleActions: 'restart' } })
+}
+
+onMounted(() => {
+    loadlines();
+})
+</script>
