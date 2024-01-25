@@ -7,17 +7,19 @@ import { RouterLink, RouterView } from "vue-router";
 </template>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-
-.hanken {
-  font-family: "Hanken Grotesk", sans-serif;
+.plus {
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .inter {
   font-family: "Inter", sans-serif;
 }
 
-main {
+html {
+  height: 100%;
+}
+
+body {
   min-height: 100vh;
 }
 
@@ -33,11 +35,6 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   width: 5px;
-  background: #101828;
-}
-
-textarea::-webkit-scrollbar {
-  width: 5px;
-  background: transparent;
+  background: #000;
 }
 </style>
