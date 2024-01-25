@@ -17,7 +17,7 @@
         </div>
         <div class="space-x-[32px] hidden md:flex items-center">
             <div
-                class="w-fit md:hidden lg:hidden space-x-[8px] xlg:flex items-center border border-[#dadddd] pl-[16px] rounded-[24px] bg-[#fff]">
+                class="w-fit md:hidden lg:hidden space-x-[8px] xl:flex items-center border border-[#dadddd] pl-[16px] rounded-[24px] bg-[#fff]">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd"
