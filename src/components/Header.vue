@@ -102,7 +102,7 @@
         <div v-show="bigM" class="fixed w-full z-[2000] md:hidden bg-[transparent] h-full top-0 left-0">
             <div class="w-full h-full flex flex-row md:flex md:flex-row">
                 <div
-                    :class="isDark ? 'dark overflow-y-scroll sidenav py-[20px] md:flex md:flex-col fixed z-[3000] h-full border border-[#ebecf2]' : 'md:w-[80px] sidenav z-[200] overflow-y-scroll fixed py-[20px] md:flex md:flex-col bg-[#F7F8FA] h-full border border-[#ebecf2]'">
+                    :class="isDark ? 'dark overflow-y-scroll sidenav py-[20px] md:flex md:flex-col fixed z-[3000] h-full border-r border-[#ebecf2]' : 'md:w-[80px] sidenav z-[200] overflow-y-scroll fixed py-[20px] md:flex md:flex-col bg-[#F7F8FA] h-full border-r border-[#ebecf2]'">
                     <!--logo and icons part-->
                     <div class="px-[20px] mb-[28px]">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
