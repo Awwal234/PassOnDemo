@@ -1,7 +1,7 @@
 <template>
     <div>
         <div
-            :class="isDark ? 'dark text-[#fff] z-[30] left-0 border pl-[20px] md:pl-[100px] pr-[20px] py-[15px] flex items-center justify-between top-0 fixed w-full' : 'bg-[#fafafa] z-[100] left-0 md:border pl-[20px] md:pl-[100px] pr-[20px] py-[15px] flex items-center justify-between top-0 fixed w-full'">
+            :class="isDark ? 'dark text-[#fff] z-[30] left-0 border-b pl-[20px] md:pl-[100px] pr-[20px] py-[15px] flex items-center justify-between top-0 fixed w-full' : 'bg-[#fafafa] z-[100] left-0 md:border-b pl-[20px] md:pl-[100px] pr-[20px] py-[15px] flex items-center justify-between top-0 fixed w-full'">
             <div
                 :class="isDark ? 'text-[#fff] hidden md:block plus font-[600] text-[20px] leading-[28px]' : 'text-[#26282C] hidden md:block plus font-[600] text-[20px] leading-[28px]'">
                 Dashboard</div>

@@ -2,7 +2,7 @@
   <div :class="isDark ? 'dark' : 'bg-[#fafafa] min-h-[100vh] w-full md:block lg:block xl:block'">
     <div class="w-full block md:flex md:flex-row">
       <div
-        :class="isDark ? 'dark overflow-y-scroll sidenav py-[20px] md:flex md:flex-col fixed z-[100] h-full border border-[#ebecf2] hidden' : 'md:w-[80px] hidden sidenav z-[200] overflow-y-scroll fixed py-[20px] md:flex md:flex-col bg-[#F7F8FA] h-full border border-[#ebecf2]'">
+        :class="isDark ? 'dark overflow-y-scroll sidenav py-[20px] md:flex md:flex-col fixed z-[100] h-full border-r border-[#ebecf2] hidden' : 'md:w-[80px] hidden sidenav z-[200] overflow-y-scroll fixed py-[20px] md:flex md:flex-col bg-[#F7F8FA] h-full border-r border-[#ebecf2]'">
         <!--logo and icons part-->
         <div class="px-[20px] mb-[28px]">
           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -228,7 +228,7 @@
       <!--sidebar ends-->
       <!--main sect begin-->
       <div
-        :class="isDark ? 'md:w-[calc(100%-0px)] w-full border relative bg-[#000] min-h-[100vh]' : 'md:w-[calc(100%-0px)] w-full border relative bg-[#fafafa] min-h-[100vh]'">
+        :class="isDark ? 'md:w-[calc(100%-0px)] w-full relative bg-[#000] min-h-[100vh]' : 'md:w-[calc(100%-0px)] w-full relative bg-[#fafafa] min-h-[100vh]'">
         <div class="">
           <!--header role-->
           <Header :isDark="isDark" :toggleModeLight="toggleModeLight" :toggleMode="toggleMode" />
