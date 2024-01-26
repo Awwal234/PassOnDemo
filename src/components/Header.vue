@@ -349,7 +349,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, defineProps } from 'vue'
+import { ref } from 'vue'
 import { gsap } from 'gsap'
 const month = ref("") as any
 const day = ref("") as any
@@ -357,10 +357,10 @@ const year = ref("") as any
 
 const menu = ref(false);
 const menus = ref(false);
-
+//@ts-ignore
 const props = defineProps<{
     isDark: boolean;
-    toggleMode: ()=> void;
+    toggleMode: () => void;
     toggleModeLight: () => void;
 }>();
 //@ts-ignore
