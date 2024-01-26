@@ -1,7 +1,7 @@
 <template>
     <div>
         <div
-            :class="isDark ? 'dark text-[#fff] z-[30] left-0 border-b pl-[20px] md:pl-[100px] pr-[20px] py-[15px] flex items-center justify-between top-0 fixed w-full' : 'bg-[#fafafa] z-[100] left-0 md:border-b pl-[20px] md:pl-[100px] pr-[20px] py-[15px] flex items-center justify-between top-0 fixed w-full'">
+            :class="isDark ? 'dark text-[#fff] z-[30] left-0 border-b pl-[20px] md:pl-[100px] pr-[20px] py-[15px] flex items-center justify-between top-0 fixed w-full' : 'bg-[#fafafa] z-[100] left-0 border-b pl-[20px] md:pl-[100px] pr-[20px] py-[15px] flex items-center justify-between top-0 fixed w-full'">
             <div
                 :class="isDark ? 'text-[#fff] hidden md:block plus font-[600] text-[20px] leading-[28px]' : 'text-[#26282C] hidden md:block plus font-[600] text-[20px] leading-[28px]'">
                 Dashboard</div>
@@ -12,13 +12,19 @@
                         fill="#34CAA5" />
                 </svg>
             </div>
-            <div @click="toggleMenus" class="md:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M4 8.5H20" :stroke="isDark ? 'white' : 'black'" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    <path d="M4 15.5H20" :stroke="isDark ? 'white' : 'black'" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
+            <div class="md:hidden flex items-center space-x-[30px]">
+                <div class="w-[38px] h-[38px] overflow-hidden rounded-[19px]">
+                    <img src="/avi.svg" class="w-full h-full object-contain" />
+                </div>
+                <div>
+                    <svg @click="toggleMenus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none">
+                        <path d="M4 8.5H20" :stroke="isDark ? 'white' : 'black'" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M4 15.5H20" :stroke="isDark ? 'white' : 'black'" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
             </div>
             <div class="space-x-[32px] hidden md:flex items-center">
                 <div
@@ -66,9 +72,9 @@
                 <div
                     class="w-[215px] space-x-[12px] px-[8px] py-[3px] flex items-center border border-[#daddddd] rounded-[28px]">
                     <div class="w-[38px] h-[38px] overflow-hidden rounded-[19px]">
-                        <img src="/avi.svg" class="w-full h-full object-contain" />
+                        <img @click="toggleMenu" src="/avi.svg" class="w-full h-full object-contain" />
                     </div>
-                    <div class="w-[121px] space-y-[2px]">
+                    <div @click="toggleMenu" class="w-[121px] space-y-[2px]">
                         <div
                             :class="isDark ? 'w-full inter font-[400] text-[#fff] text-[16px] text-right' : 'w-full inter font-[400] text-[#26282c] text-[16px] text-right'">
                             Justin Bergson</div>
@@ -89,12 +95,22 @@
         </div>
         <div v-show="menu" class="w-full z-[30] hidden md:flex items-center justify-between top-[80px] fixed p-[20px]">
             <div></div>
-            <div class="bg-[#fff] menu relative shadow-md w-[300px] rounded-[5px] px-[11px] py-[10px]">
+            <div
+                :class="isDark ? 'sdark pt-[10px] space-y-[15px] border border-[#fff] menu relative shadow-md w-[300px] rounded-[5px]' : 'bg-[#fff] pt-[10px] space-y-[15px] menu relative shadow-md w-[300px] rounded-[5px]'">
                 <div
-                    :class="isDark ? 'plus text-[#000] mb-[20px] cursor-pointer text-[15px] font-[700]' : 'plus mb-[20px] cursor-pointer text-[15px] font-[700]'">
+                    :class="isDark ? 'inter text-[#fff] cursor-pointer text-[12px] font-[800] px-[11px]' : 'inter cursor-pointer text-[12px] font-[700] px-[11px]'">
+                    My Account (Justin Bergson)</div>
+                <div
+                    :class="isDark ? 'inter text-[#fff] cursor-pointer text-[12px] font-[500] px-[11px] hover:bg-gray-50 hover:py-[8px] hover:text-[#000]' : 'inter cursor-pointer text-[12px] font-[500] px-[11px] hover:bg-gray-50 hover:py-[8px]'">
                     Switch Accounts</div>
                 <div
-                    :class="isDark ? 'plus text-[#000] cursor-pointer text-[15px] font-[700]' : 'plus cursor-pointer text-[15px] font-[700]'">
+                    :class="isDark ? 'inter text-[#fff] cursor-pointer text-[12px] font-[500] px-[11px] hover:bg-gray-50 hover:py-[8px] hover:text-[#000]' : 'inter cursor-pointer text-[12px] font-[500] px-[11px] hover:bg-gray-50 hover:py-[8px]'">
+                    Order History</div>
+                <div
+                    :class="isDark ? 'inter text-[#fff] cursor-pointer text-[12px] font-[500] px-[11px] hover:bg-gray-50 hover:py-[8px] hover:text-[#000]' : 'inter cursor-pointer text-[12px] font-[500] px-[11px] hover:bg-gray-50 hover:py-[8px]'">
+                    Settings</div>
+                <div
+                    :class="isDark ? 'inter text-[#fff] cursor-pointer text-[12px] font-[500] px-[11px] hover:bg-gray-50 hover:py-[8px] hover:text-[#000] pb-[10px]' : 'inter pb-[10px] cursor-pointer text-[12px] font-[500] px-[11px] hover:bg-gray-50 hover:py-[8px]'">
                     LogOut</div>
             </div>
         </div>

@@ -3,23 +3,24 @@
         <div
             class="w-full mb-[20px] space-y-[50px] md:space-y-[50px] lg:space-y-[50px] xl:space-y-[0px] block xl:space-x-[20px] lg:space-x-[0px] lg:block xl:flex">
             <div
-                class="xl:w-[55%] w-full h-fit lg:h-fit xl:h-[386px] lg:w-full bg-[#fff] border border-[#edf2f7] rounded-[14px] py-[21.5px] px-[20px]">
+                :class="isDark ? 'sdark xl:w-[55%] w-full h-fit lg:h-fit xl:h-[386px] lg:w-full border border-[#edf2f7] rounded-[14px] py-[21.5px] px-[20px]' : 'bg-[#fff] xl:w-[55%] w-full h-fit lg:h-fit xl:h-[386px] lg:w-full border border-[#edf2f7] rounded-[14px] py-[21.5px] px-[20px]'">
                 <div class="flex w-full mb-[21.5px] xl:mb-[2px] justify-between items-center">
-                    <div class="text-[#26282c] plus leading-[26px] font-[600] text-[18px]">
+                    <div :class="isDark ? 'text-[#fff]' : 'text-[#26282c] plus leading-[26px] font-[600] text-[18px]'">
                         Sales Trends
                     </div>
                     <div class="flex space-x-[10px] items-center">
-                        <div class="text-[#3a3f51] leading-[22px] font-[500] text-[14px] plus">
+                        <div
+                            :class="isDark ? 'text-[#fff] leading-[22px] font-[500] text-[14px] plus' : 'text-[#3a3f51] leading-[22px] font-[500] text-[14px] plus'">
                             Sort by:
                         </div>
                         <div
                             class="w-fit flex items-center border-[#e1dfdf] border-[1px] rounded-[20px] py-[6px] px-[12px]">
                             <select
-                                class="text-[#3a3f51] bg-[transparent] plus text-[12px] leading-[16px] font-[400] focus:outline-none"
+                                :class="isDark ? 'text-[#fff] bg-[transparent] plus text-[12px] leading-[16px] font-[400] focus:outline-none' : 'text-[#3a3f51] bg-[transparent] plus text-[12px] leading-[16px] font-[400] focus:outline-none'"
                                 id="change">
-                                <option>Weekly</option>
-                                <option>Daily</option>
-                                <option>Monthly</option>
+                                <option class="text-[#000]">Weekly</option>
+                                <option class="text-[#000]">Daily</option>
+                                <option class="text-[#000]">Monthly</option>
                             </select>
                         </div>
                     </div>
@@ -27,7 +28,7 @@
                 <!--canvas-->
                 <div class="w-[100%] h-fit xl:h-[310px]">
                     <canvas id="myChart"
-                        class="w-full object-cover leading-[16px] font-[600] plus text-[12px] h-full"></canvas>
+                        :class="isDark ? 'text-[#fff] w-full object-cover leading-[16px] font-[600] plus text-[12px] h-full' : 'text-[#3a3f51] w-full object-cover leading-[16px] font-[600] plus text-[12px] h-full'"></canvas>
                 </div>
                 <!---->
             </div>
@@ -35,9 +36,10 @@
             <div class="xl:w-[45%] lg:w-full w-full">
                 <div class="md:flex block mb-[16px] md:space-x-[8px] w-full">
                     <div
-                        class="rounded-[14px] mb-[10px] md:mb-[10px] p-[16px] w-full md:w-[50%] bg-[#fff] border-[#edf2f7] border">
+                        :class="isDark ? 'sdark border-[#edf2f7] rounded-[14px] mb-[10px] md:mb-[10px] p-[16px] w-full md:w-[50%] border' : 'bg-[#fff] border-[#edf2f7] rounded-[14px] mb-[10px] md:mb-[10px] p-[16px] w-full md:w-[50%] border'">
                         <div class="flex mb-[10px] justify-between items-center">
-                            <div class="p-[8px] border-[#e6e6e6] border flex items-center h-[40px] w-[40px] rounded-full">
+                            <div
+                                :class="isDark ? 'border-[#fff] p-[8px] border flex items-center h-[40px] w-[40px] rounded-full' : 'border-[#e6e6e6] p-[8px] border flex items-center h-[40px] w-[40px] rounded-full'">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none">
                                     <path opacity="0.4"
@@ -73,10 +75,12 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="text-[#898989] mb-[5px] leading-[26px] font-[500] text-[18px] plus">
+                        <div
+                            :class="isDark ? 'text-[#fff] mb-[5px] leading-[26px] font-[500] text-[18px] plus' : 'text-[#898989] mb-[5px] leading-[26px] font-[500] text-[18px] plus'">
                             Total Order
                         </div>
-                        <div class="text-[#3a3f51] mb-[10px] leading-[32px] font-[600] plus text-[24px]">
+                        <div
+                            :class="isDark ? 'text-[#fff] mb-[10px] leading-[32px] font-[600] plus text-[24px]' : 'text-[#898989] mb-[10px] leading-[32px] font-[600] plus text-[24px]'">
                             350
                         </div>
                         <div class="flex w-full items-center justify-between">
@@ -96,16 +100,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="text-[#606060] w-[65%] text-right inter text-[14px] font-[400]">
+                            <div
+                                :class="isDark ? 'text-[#fff] w-[65%] text-right inter text-[14px] font-[400]' : 'text-[#606060] w-[65%] text-right inter text-[14px] font-[400]'">
                                 vs. previous month
                             </div>
                         </div>
                     </div>
                     <!--second load flex-->
                     <div
-                        class="rounded-[14px] mb-[10px] md:mb-[10px] p-[16px] w-full md:w-[50%] bg-[#fff] border-[#edf2f7] border">
+                        :class="isDark ? 'sdark border-[#edf2f7] rounded-[14px] mb-[10px] md:mb-[10px] p-[16px] w-full md:w-[50%] border' : 'bg-[#fff] border-[#edf2f7] rounded-[14px] mb-[10px] md:mb-[10px] p-[16px] w-full md:w-[50%] border'">
                         <div class="flex mb-[10px] justify-between items-center">
-                            <div class="p-[8px] border-[#e6e6e6] border flex items-center h-[40px] w-[40px] rounded-full">
+                            <div
+                                :class="isDark ? 'border-[#fff] p-[8px] border flex items-center h-[40px] w-[40px] rounded-full' : 'border-[#e6e6e6] p-[8px] border flex items-center h-[40px] w-[40px] rounded-full'">
                                 <svg class="refund" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     viewBox="0 0 24 24" fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -141,10 +147,12 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="text-[#898989] mb-[5px] leading-[26px] font-[500] text-[18px] plus">
+                        <div
+                            :class="isDark ? 'text-[#fff] mb-[5px] leading-[26px] font-[500] text-[18px] plus' : 'text-[#898989] mb-[5px] leading-[26px] font-[500] text-[18px] plus'">
                             Total Refund
                         </div>
-                        <div class="text-[#3a3f51] mb-[10px] leading-[32px] font-[600] plus text-[24px]">
+                        <div
+                            :class="isDark ? 'text-[#fff] mb-[10px] leading-[32px] font-[600] plus text-[24px]' : 'text-[#3a3f51] mb-[10px] leading-[32px] font-[600] plus text-[24px]'">
                             270
                         </div>
                         <div class="flex w-full items-center justify-between">
@@ -164,7 +172,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="text-[#606060] w-[65%] text-right inter text-[14px] font-[400]">
+                            <div
+                                :class="isDark ? 'text-[#fff] w-[65%] text-right inter text-[14px] font-[400]' : 'text-[#606060] w-[65%] text-right inter text-[14px] font-[400]'">
                                 vs. previous month
                             </div>
                         </div>
@@ -174,9 +183,10 @@
                 <!--second flex down-->
                 <div class="md:flex block mb-[16px] md:space-x-[8px] w-full">
                     <div
-                        class="rounded-[14px] mb-[10px] md:mb-[0px] p-[16px] w-full md:w-[50%] bg-[#fff] border-[#edf2f7] border">
+                        :class="isDark ? 'rounded-[14px] mb-[10px] md:mb-[0px] p-[16px] w-full md:w-[50%] sdark border-[#edf2f7] border' : 'rounded-[14px] mb-[10px] md:mb-[0px] p-[16px] w-full md:w-[50%] bg-[#fff] border-[#edf2f7] border'">
                         <div class="flex mb-[10px] justify-between items-center">
-                            <div class="p-[8px] border-[#e6e6e6] border flex items-center h-[40px] w-[40px] rounded-full">
+                            <div
+                                :class="isDark ? 'p-[8px] border-[#fff] border flex items-center h-[40px] w-[40px] rounded-full' : 'p-[8px] border-[#e6e6e6] border flex items-center h-[40px] w-[40px] rounded-full'">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none">
                                     <path
@@ -212,10 +222,12 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="text-[#898989] mb-[5px] leading-[26px] font-[500] text-[18px] plus">
+                        <div
+                            :class="isDark ? 'text-[#fff] mb-[5px] leading-[26px] font-[500] text-[18px] plus' : 'text-[#898989] mb-[5px] leading-[26px] font-[500] text-[18px] plus'">
                             Average Sales
                         </div>
-                        <div class="text-[#3a3f51] mb-[10px] leading-[32px] font-[600] plus text-[24px]">
+                        <div
+                            :class="isDark ? 'text-[#fff] mb-[10px] leading-[32px] font-[600] plus text-[24px]' : 'text-[#3a3f51] mb-[10px] leading-[32px] font-[600] plus text-[24px]'">
                             1567
                         </div>
                         <div class="flex w-full items-center justify-between">
@@ -235,15 +247,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="text-[#606060] w-[65%] text-right inter text-[14px] font-[400]">
+                            <div
+                                :class="isDark ? 'text-[#fff] w-[65%] text-right inter text-[14px] font-[400]' : 'text-[#606060] w-[65%] text-right inter text-[14px] font-[400]'">
                                 vs. previous month
                             </div>
                         </div>
                     </div>
                     <!--second load flex-->
-                    <div class="rounded-[14px] p-[16px] w-full md:w-[50%] bg-[#fff] border-[#edf2f7] border">
+                    <div
+                        :class="isDark ? 'rounded-[14px] p-[16px] w-full md:w-[50%] sdark border-[#edf2f7] border' : 'rounded-[14px] p-[16px] w-full md:w-[50%] bg-[#fff] border-[#edf2f7] border'">
                         <div class="flex mb-[10px] justify-between items-center">
-                            <div class="p-[8px] border-[#e6e6e6] border flex items-center h-[40px] w-[40px] rounded-full">
+                            <div
+                                :class="isDark ? 'p-[8px] border-[#fff] border flex items-center h-[40px] w-[40px] rounded-full' : 'p-[8px] border-[#e6e6e6] border flex items-center h-[40px] w-[40px] rounded-full'">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                     fill="none">
                                     <path opacity="0.4"
@@ -276,10 +291,12 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="text-[#898989] mb-[5px] leading-[26px] font-[500] text-[18px] plus">
+                        <div
+                            :class="isDark ? 'text-[#fff] mb-[5px] leading-[26px] font-[500] text-[18px] plus' : 'text-[#898989] mb-[5px] leading-[26px] font-[500] text-[18px] plus'">
                             Total Income
                         </div>
-                        <div class="text-[#3a3f51] mb-[10px] leading-[32px] font-[600] plus text-[24px]">
+                        <div
+                            :class="isDark ? 'text-[#fff] mb-[10px] leading-[32px] font-[600] plus text-[24px]' : 'text-[#3a3f51] mb-[10px] leading-[32px] font-[600] plus text-[24px]'">
                             $350.000
                         </div>
                         <div class="flex w-full items-center justify-between">
@@ -299,7 +316,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="text-[#606060] w-[65%] text-right inter text-[14px] font-[400]">
+                            <div
+                                :class="isDark ? 'text-[#fff] w-[65%] text-right inter text-[14px] font-[400]' : 'text-[#606060] w-[65%] text-right inter text-[14px] font-[400]'">
                                 vs. previous month
                             </div>
                         </div>
@@ -312,7 +330,7 @@
             <!--begin flex-->
         </div>
         <!--second section full flex-->
-        <Order />
+        <Order :isDark="isDark" />
         <!--end second section full flex-->
     </div>
 </template>
@@ -325,12 +343,17 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/all';
 gsap.registerPlugin(ScrollTrigger)
 
+//@ts-ignore
+const props = defineProps<{
+    isDark: boolean;
+}>();
+
 const rotateRefund = () => {
     gsap.to('.refund', { duration: 2, repeat: -1, rotation: 360, scrollTrigger: { trigger: '.refund', toggleActions: 'restart' } });
-    gsap.fromTo('.lineone', {x: 0, width: 0}, {x: 0, duration: 3, repeat: -1, width: 'auto', scrollTrigger: { trigger: '.lineone', toggleActions: 'restart' }})
-    gsap.fromTo('.linetwo', {x: 0, width: 0}, {x: 0, duration: 3, repeat: -1, width: 'auto', scrollTrigger: { trigger: '.linetwo', toggleActions: 'restart' }})
-    gsap.fromTo('.linethree', {x: 0, width: 0}, {x: 0, duration: 3, repeat: -1, width: 'auto', scrollTrigger: { trigger: '.linethree', toggleActions: 'restart' }})
-    gsap.fromTo('.linefour', {x: 0, width: 0}, {x: 0, duration: 3, repeat: -1, width: 'auto', scrollTrigger: { trigger: '.linefour', toggleActions: 'restart' }})
+    gsap.fromTo('.lineone', { x: 0, width: 0 }, { x: 0, duration: 3, repeat: -1, width: 'auto', scrollTrigger: { trigger: '.lineone', toggleActions: 'restart' } })
+    gsap.fromTo('.linetwo', { x: 0, width: 0 }, { x: 0, duration: 3, repeat: -1, width: 'auto', scrollTrigger: { trigger: '.linetwo', toggleActions: 'restart' } })
+    gsap.fromTo('.linethree', { x: 0, width: 0 }, { x: 0, duration: 3, repeat: -1, width: 'auto', scrollTrigger: { trigger: '.linethree', toggleActions: 'restart' } })
+    gsap.fromTo('.linefour', { x: 0, width: 0 }, { x: 0, duration: 3, repeat: -1, width: 'auto', scrollTrigger: { trigger: '.linefour', toggleActions: 'restart' } })
 }
 
 const canvasRef = ref(null)

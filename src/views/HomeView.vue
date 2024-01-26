@@ -232,7 +232,7 @@
         <div class="">
           <!--header role-->
           <Header :isDark="isDark" :toggleModeLight="toggleModeLight" :toggleMode="toggleMode" />
-          <Main />
+          <Main :isDark="isDark" />
         </div>
       </div>
       <!--end main sect-->
@@ -263,5 +263,9 @@ const toggleModeLight = () => {
 .dark {
   background: #000;
   color: #fff;
+}
+
+.sdark {
+  background: #0a0a0a;
 }
 </style>
