@@ -14,7 +14,8 @@
                         </div>
                         <div
                             class="w-fit flex items-center border-[#e1dfdf] border-[1px] rounded-[20px] py-[6px] px-[12px]">
-                            <select class="text-[#3a3f51] plus text-[12px] leading-[16px] font-[400] focus:outline-none"
+                            <select
+                                class="text-[#3a3f51] bg-[transparent] plus text-[12px] leading-[16px] font-[400] focus:outline-none"
                                 id="change">
                                 <option>Weekly</option>
                                 <option>Daily</option>
@@ -326,10 +327,10 @@ gsap.registerPlugin(ScrollTrigger)
 
 const rotateRefund = () => {
     gsap.to('.refund', { duration: 2, repeat: -1, rotation: 360, scrollTrigger: { trigger: '.refund', toggleActions: 'restart' } });
-    gsap.fromTo('.lineone', { x: 0, width: 0 }, { x: 0, duration: 2, repeat: -1, width: 'auto', scrollTrigger: { trigger: '.lineone', toggleActions: 'restart' } })
-    gsap.fromTo('.linetwo', { x: 0, width: 0 }, { x: 0, duration: 2, repeat: -1, width: 'auto', scrollTrigger: { trigger: '.linetwo', toggleActions: 'restart' } })
-    gsap.fromTo('.linethree', { x: 0, width: 0 }, { x: 0, duration: 2, repeat: -1, width: 'auto', scrollTrigger: { trigger: '.linethree', toggleActions: 'restart' } })
-    gsap.fromTo('.linefour', { x: 0, width: 0 }, { x: 0, duration: 2, repeat: -1, width: 'auto', scrollTrigger: { trigger: '.linefour', toggleActions: 'restart' } })
+    gsap.fromTo('.lineone', {x: 0, width: 0}, {x: 0, duration: 3, repeat: -1, width: 'auto', scrollTrigger: { trigger: '.lineone', toggleActions: 'restart' }})
+    gsap.fromTo('.linetwo', {x: 0, width: 0}, {x: 0, duration: 3, repeat: -1, width: 'auto', scrollTrigger: { trigger: '.linetwo', toggleActions: 'restart' }})
+    gsap.fromTo('.linethree', {x: 0, width: 0}, {x: 0, duration: 3, repeat: -1, width: 'auto', scrollTrigger: { trigger: '.linethree', toggleActions: 'restart' }})
+    gsap.fromTo('.linefour', {x: 0, width: 0}, {x: 0, duration: 3, repeat: -1, width: 'auto', scrollTrigger: { trigger: '.linefour', toggleActions: 'restart' }})
 }
 
 const canvasRef = ref(null)

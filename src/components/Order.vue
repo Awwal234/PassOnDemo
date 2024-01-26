@@ -312,7 +312,7 @@
                 Book Bazar
             </div>
             <div class="w-full mb-[16px] h-fit rounded-[40px] bg-[#f5f5f5]">
-                <div class="h-[12px] w-[55%] rounded-[40px] bg-[#6160dc]"></div>
+                <div class="h-[12px] lone w-[55%] rounded-[40px] bg-[#6160dc]"></div>
             </div>
             <div class="flex mb-[20px] items-center justify-between">
                 <div class="text-[#525252] leading-[26px] font-[400] plus text-[18px]">
@@ -326,7 +326,7 @@
                 Artisan Aisle
             </div>
             <div class="w-full mb-[16px] h-fit rounded-[40px] bg-[#f5f5f5]">
-                <div class="h-[12px] w-[40%] rounded-[40px] bg-[#54C5EB]"></div>
+                <div class="h-[12px] ltwo w-[40%] rounded-[40px] bg-[#54C5EB]"></div>
             </div>
             <div class="flex mb-[20px] items-center justify-between">
                 <div class="text-[#525252] leading-[26px] font-[400] plus text-[18px]">
@@ -340,7 +340,7 @@
                 Toy Troop
             </div>
             <div class="w-full mb-[16px] h-fit rounded-[40px] bg-[#f5f5f5]">
-                <div class="h-[12px] w-[30%] rounded-[40px] bg-[#FFB74A]"></div>
+                <div class="h-[12px] lthree w-[30%] rounded-[40px] bg-[#FFB74A]"></div>
             </div>
             <div class="flex mb-[20px] items-center justify-between">
                 <div class="text-[#525252] leading-[26px] font-[400] plus text-[18px]">
@@ -354,7 +354,7 @@
                 XStore
             </div>
             <div class="w-full mb-[16px] h-fit rounded-[40px] bg-[#f5f5f5]">
-                <div class="h-[12px] w-[30%] rounded-[40px] bg-[#FF4A55]"></div>
+                <div class="h-[12px] lfour w-[30%] rounded-[40px] bg-[#FF4A55]"></div>
             </div>
             <div class="flex mb-[0px] items-center justify-between">
                 <div class="text-[#525252] leading-[26px] font-[400] plus text-[18px]">

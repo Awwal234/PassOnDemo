@@ -1,8 +1,10 @@
 <template>
     <div>
         <div
-            class="bg-[#fafafa] z-[100] left-0 md:border pl-[20px] md:pl-[100px] pr-[20px] py-[15px] flex items-center justify-between top-0 fixed w-full">
-            <div class="text-[#26282C] hidden md:block plus font-[600] text-[20px] leading-[28px]">Dashboard</div>
+            :class="isDark ? 'dark text-[#fff] z-[30] left-0 border pl-[20px] md:pl-[100px] pr-[20px] py-[15px] flex items-center justify-between top-0 fixed w-full' : 'bg-[#fafafa] z-[100] left-0 md:border pl-[20px] md:pl-[100px] pr-[20px] py-[15px] flex items-center justify-between top-0 fixed w-full'">
+            <div
+                :class="isDark ? 'text-[#fff] hidden md:block plus font-[600] text-[20px] leading-[28px]' : 'text-[#26282C] hidden md:block plus font-[600] text-[20px] leading-[28px]'">
+                Dashboard</div>
             <div class="flex md:hidden items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -13,8 +15,10 @@
             <div class="md:hidden">
                 <svg @click="toggleMenus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                     fill="none">
-                    <path d="M4 8.5H20" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M4 15.5H20" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M4 8.5H20" :stroke="isDark ? 'white' : 'black'" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M4 15.5H20" :stroke="isDark ? 'white' : 'black'" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
                 </svg>
             </div>
             <div class="space-x-[32px] hidden md:flex items-center">
@@ -32,25 +36,27 @@
                             class="py-[12px] inter w-full bg-[transparent] pr-[16px] text-[#A3A3A3] text-[16px] font-[400] leading-[24px] focus:outline-none" />
                     </div>
                 </div>
-                <div class="lg:flex xlg:flex md:hidden items-center space-x-[10px]">
+                <div
+                    :class="isDark ? 'text-[#fff] lg:flex xlg:flex md:hidden items-center space-x-[10px]' : 'lg:flex xlg:flex md:hidden items-center space-x-[10px]'">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <path
                                 d="M2 9.79483C2 6.70067 2 5.15318 2.9376 4.19236C3.8744 3.23071 5.3832 3.23071 8.4 3.23071H11.6C14.6168 3.23071 16.1256 3.23071 17.0624 4.19236C18 5.15318 18 6.70067 18 9.79483V11.4359C18 14.53 18 16.0775 17.0624 17.0383C16.1256 18 14.6168 18 11.6 18H8.4C5.3832 18 3.8744 18 2.9376 17.0383C2 16.0775 2 14.53 2 11.4359V9.79483Z"
-                                stroke="black" stroke-width="1.37144" />
-                            <path d="M5.9999 3.23077V2M13.9999 3.23077V2M2.3999 7.33334H17.5999" stroke="black"
-                                stroke-width="1.37144" stroke-linecap="round" />
+                                :stroke="isDark ? 'white' : 'black'" stroke-width="1.37144" />
+                            <path d="M5.9999 3.23077V2M13.9999 3.23077V2M2.3999 7.33334H17.5999"
+                                :stroke="isDark ? 'white' : 'black'" stroke-width="1.37144" stroke-linecap="round" />
                             <path
                                 d="M14.8002 13.8974C14.8002 14.115 14.7159 14.3237 14.5659 14.4776C14.4159 14.6314 14.2124 14.7179 14.0002 14.7179C13.788 14.7179 13.5845 14.6314 13.4345 14.4776C13.2845 14.3237 13.2002 14.115 13.2002 13.8974C13.2002 13.6798 13.2845 13.4711 13.4345 13.3172C13.5845 13.1633 13.788 13.0769 14.0002 13.0769C14.2124 13.0769 14.4159 13.1633 14.5659 13.3172C14.7159 13.4711 14.8002 13.6798 14.8002 13.8974ZM14.8002 10.6153C14.8002 10.8329 14.7159 11.0416 14.5659 11.1955C14.4159 11.3494 14.2124 11.4358 14.0002 11.4358C13.788 11.4358 13.5845 11.3494 13.4345 11.1955C13.2845 11.0416 13.2002 10.8329 13.2002 10.6153C13.2002 10.3977 13.2845 10.189 13.4345 10.0351C13.5845 9.88125 13.788 9.7948 14.0002 9.7948C14.2124 9.7948 14.4159 9.88125 14.5659 10.0351C14.7159 10.189 14.8002 10.3977 14.8002 10.6153ZM10.8002 13.8974C10.8002 14.115 10.7159 14.3237 10.5659 14.4776C10.4159 14.6314 10.2124 14.7179 10.0002 14.7179C9.78802 14.7179 9.58454 14.6314 9.43451 14.4776C9.28448 14.3237 9.2002 14.115 9.2002 13.8974C9.2002 13.6798 9.28448 13.4711 9.43451 13.3172C9.58454 13.1633 9.78802 13.0769 10.0002 13.0769C10.2124 13.0769 10.4159 13.1633 10.5659 13.3172C10.7159 13.4711 10.8002 13.6798 10.8002 13.8974ZM10.8002 10.6153C10.8002 10.8329 10.7159 11.0416 10.5659 11.1955C10.4159 11.3494 10.2124 11.4358 10.0002 11.4358C9.78802 11.4358 9.58454 11.3494 9.43451 11.1955C9.28448 11.0416 9.2002 10.8329 9.2002 10.6153C9.2002 10.3977 9.28448 10.189 9.43451 10.0351C9.58454 9.88125 9.78802 9.7948 10.0002 9.7948C10.2124 9.7948 10.4159 9.88125 10.5659 10.0351C10.7159 10.189 10.8002 10.3977 10.8002 10.6153ZM6.8002 13.8974C6.8002 14.115 6.71591 14.3237 6.56588 14.4776C6.41585 14.6314 6.21237 14.7179 6.0002 14.7179C5.78802 14.7179 5.58454 14.6314 5.43451 14.4776C5.28448 14.3237 5.2002 14.115 5.2002 13.8974C5.2002 13.6798 5.28448 13.4711 5.43451 13.3172C5.58454 13.1633 5.78802 13.0769 6.0002 13.0769C6.21237 13.0769 6.41585 13.1633 6.56588 13.3172C6.71591 13.4711 6.8002 13.6798 6.8002 13.8974ZM6.8002 10.6153C6.8002 10.8329 6.71591 11.0416 6.56588 11.1955C6.41585 11.3494 6.21237 11.4358 6.0002 11.4358C5.78802 11.4358 5.58454 11.3494 5.43451 11.1955C5.28448 11.0416 5.2002 10.8329 5.2002 10.6153C5.2002 10.3977 5.28448 10.189 5.43451 10.0351C5.58454 9.88125 5.78802 9.7948 6.0002 9.7948C6.21237 9.7948 6.41585 9.88125 6.56588 10.0351C6.71591 10.189 6.8002 10.3977 6.8002 10.6153Z"
-                                fill="black" />
+                                :fill="isDark ? 'white' : 'black'" />
                         </svg>
                     </div>
-                    <div class="text-[#26282c] inter text-[14px] leading-[22px] font-[500]">
-                        {{ `${month} ${day}, ${year}` }}
+                    <div
+                        :class="isDark ? 'text-[#fff] inter text-[14px] leading-[22px] font-[500]' : 'text-[#26282c] inter text-[14px] leading-[22px] font-[500]'">
+                        {{ `${month} ${day}, ${year} ` }}
                     </div>
                 </div>
                 <div
-                    class="w-[40px] h-[40px] cursor-pointer p-[11px] flex items-center border-[0.769px] border-[#dadddd] rounded-[27px]">
+                    :class="isDark ? 'w-[40px] bg-[#fff] h-[40px] cursor-pointer p-[11px] flex items-center border-[0.769px] border-[#dadddd] rounded-[27px]' : 'w-[40px] h-[40px] cursor-pointer p-[11px] flex items-center border-[0.769px] border-[#dadddd] rounded-[27px]'">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M10.0001 1.04163C8.2872 1.04163 6.64449 1.72206 5.43332 2.93323C4.22215 4.1444 3.54172 5.7871 3.54172 7.49996V8.08663C3.54167 8.66737 3.36973 9.23511 3.04755 9.71829L2.09172 11.1541C0.980053 12.8208 1.82839 15.0858 3.76089 15.6125C4.39005 15.7841 5.02505 15.9291 5.66422 16.0483L5.66589 16.0525C6.30589 17.7625 8.01839 18.9583 10.0001 18.9583C11.9817 18.9583 13.6942 17.7625 14.3351 16.0525L14.3367 16.0483C14.9769 15.9292 15.6119 15.7838 16.2401 15.6125C18.1726 15.0858 19.0209 12.8208 17.9092 11.1541L16.9526 9.71829C16.6304 9.23511 16.4584 8.66737 16.4584 8.08663V7.49996C16.4584 5.7871 15.778 4.1444 14.5668 2.93323C13.3556 1.72206 11.7129 1.04163 10.0001 1.04163ZM12.8134 16.2808C10.9442 16.5041 9.05507 16.5041 7.18589 16.2808C7.77839 17.1316 8.80922 17.7083 10.0001 17.7083C11.1909 17.7083 12.2209 17.1316 12.8134 16.2808ZM4.79172 7.49996C4.79172 6.11862 5.34045 4.79386 6.31721 3.81711C7.29396 2.84036 8.61872 2.29163 10.0001 2.29163C11.3814 2.29163 12.7062 2.84036 13.6829 3.81711C14.6597 4.79386 15.2084 6.11862 15.2084 7.49996V8.08663C15.2084 8.91412 15.4534 9.72329 15.9126 10.4116L16.8692 11.8475C17.0175 12.0695 17.1108 12.3235 17.1415 12.5887C17.1722 12.8539 17.1393 13.1226 17.0457 13.3726C16.9521 13.6226 16.8004 13.8467 16.6031 14.0265C16.4057 14.2063 16.1685 14.3366 15.9109 14.4066C12.0407 15.4621 7.95855 15.4621 4.08839 14.4066C3.83103 14.3364 3.59403 14.206 3.39692 14.0263C3.19981 13.8465 3.04822 13.6225 2.95464 13.3727C2.86106 13.1228 2.82816 12.8544 2.85866 12.5893C2.88915 12.3243 2.98217 12.0703 3.13005 11.8483L4.08839 10.4116C4.54717 9.72303 4.79189 8.91406 4.79172 8.08663V7.49996Z"
@@ -64,14 +70,18 @@
                         <img src="/avi.svg" class="w-full h-full object-contain" />
                     </div>
                     <div class="w-[121px] space-y-[2px]">
-                        <div class="w-full inter font-[400] text-[#26282c] text-[16px] text-right">Justin Bergson</div>
-                        <div class="text-[#787486] inter text-right text-[14px] font-[400]">Justin@gmail.com</div>
+                        <div
+                            :class="isDark ? 'w-full inter font-[400] text-[#fff] text-[16px] text-right' : 'w-full inter font-[400] text-[#26282c] text-[16px] text-right'">
+                            Justin Bergson</div>
+                        <div
+                            :class="isDark ? 'text-[#fff] inter text-right text-[14px] font-[400]' : 'text-[#787486] inter text-right text-[14px] font-[400]'">
+                            Justin@gmail.com</div>
                     </div>
                     <div @click="toggleMenu" class="cursor-pointer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <path
                                 d="M3.19841 6.20675C3.43891 5.95614 3.81525 5.93336 4.08045 6.1384L4.15643 6.20675L10 12.2955L15.8436 6.20675C16.0841 5.95614 16.4604 5.93336 16.7256 6.1384L16.8016 6.20675C17.0421 6.45735 17.064 6.84951 16.8672 7.12585L16.8016 7.20502L10.479 13.7933C10.2385 14.0439 9.86217 14.0666 9.59697 13.8616L9.52099 13.7933L3.19841 7.20502C2.93386 6.92935 2.93386 6.48241 3.19841 6.20675Z"
-                                fill="#0D062D" />
+                                :fill="isDark ? '#fff' : '#0D062D'" />
                         </svg>
                     </div>
                 </div>
@@ -81,15 +91,19 @@
         <div v-show="menu" class="w-full z-[30] hidden md:flex items-center justify-between top-[80px] fixed p-[20px]">
             <div></div>
             <div class="bg-[#fff] menu relative shadow-md w-[300px] rounded-[5px] px-[11px] py-[10px]">
-                <div class="plus mb-[20px] cursor-pointer text-[15px] font-[700]">Switch Accounts</div>
-                <div class="plus cursor-pointer text-[15px] font-[700]">LogOut</div>
+                <div
+                    :class="isDark ? 'plus text-[#000] mb-[20px] cursor-pointer text-[15px] font-[700]' : 'plus mb-[20px] cursor-pointer text-[15px] font-[700]'">
+                    Switch Accounts</div>
+                <div
+                    :class="isDark ? 'plus text-[#000] cursor-pointer text-[15px] font-[700]' : 'plus cursor-pointer text-[15px] font-[700]'">
+                    LogOut</div>
             </div>
         </div>
         <!--Menu-->
         <div v-show="menus" class="fixed flex w-full md:hidden bg-[transparent] h-full top-0 left-0 z-[2000]">
             <div class="w-full block md:flex md:flex-row">
                 <div
-                    class="md:w-[80px] sidenav z-[5000] overflow-y-scroll fixed py-[20px] md:flex md:flex-col bg-[#F7F8FA] h-full border border-[#ebecf2]">
+                    :class="isDark ? 'dark overflow-y-scroll sidenav py-[20px] md:flex md:flex-col fixed z-[100] h-full border border-[#ebecf2] hidden' : 'md:w-[80px] hidden sidenav z-[200] overflow-y-scroll fixed py-[20px] md:flex md:flex-col bg-[#F7F8FA] h-full border border-[#ebecf2]'">
                     <!--logo and icons part-->
                     <div class="px-[20px] mb-[28px]">
                         <svg @click="toggleMenus" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
@@ -104,23 +118,23 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path
                                     d="M7.24 2H5.34C3.15 2 2 3.15 2 5.33V7.23C2 9.41 3.15 10.56 5.33 10.56H7.23C9.41 10.56 10.56 9.41 10.56 7.23V5.33C10.57 3.15 9.42 2 7.24 2Z"
-                                    fill="#0D062D" />
+                                    :fill="isDark ? '#fff' : '#0D062D'" />
                                 <path opacity="0.4"
                                     d="M18.6699 2H16.7699C14.5899 2 13.4399 3.15 13.4399 5.33V7.23C13.4399 9.41 14.5899 10.56 16.7699 10.56H18.6699C20.8499 10.56 21.9999 9.41 21.9999 7.23V5.33C21.9999 3.15 20.8499 2 18.6699 2Z"
-                                    fill="#0D062D" />
+                                    :fill="isDark ? '#fff' : '#0D062D'" />
                                 <path
                                     d="M18.6699 13.4301H16.7699C14.5899 13.4301 13.4399 14.5801 13.4399 16.7601V18.6601C13.4399 20.8401 14.5899 21.9901 16.7699 21.9901H18.6699C20.8499 21.9901 21.9999 20.8401 21.9999 18.6601V16.7601C21.9999 14.5801 20.8499 13.4301 18.6699 13.4301Z"
-                                    fill="#0D062D" />
+                                    :fill="isDark ? '#fff' : '#0D062D'" />
                                 <path opacity="0.4"
                                     d="M7.24 13.4301H5.34C3.15 13.4301 2 14.5801 2 16.7601V18.6601C2 20.8501 3.15 22.0001 5.33 22.0001H7.23C9.41 22.0001 10.56 20.8501 10.56 18.6701V16.7701C10.57 14.5801 9.42 13.4301 7.24 13.4301Z"
-                                    fill="#0D062D" />
+                                    :fill="isDark ? '#fff' : '#0D062D'" />
                             </svg>
                         </div>
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="3" height="21" viewBox="0 0 3 21" fill="none">
                                 <path
                                     d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z"
-                                    fill="#0D062D" />
+                                    :fill="isDark ? '#fff' : '#0D062D'" />
                             </svg>
                         </div>
                     </div>
@@ -200,8 +214,8 @@
                     <div class="w-full mb-[202px]">
                         <div class="bg-[#fff] w-[46px] mx-auto space-y-[16px] rounded-[100px] p-[8px]">
                             <div class="rounded-full bg-[#34caa5] p-[6px]">
-                                <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                                    viewBox="0 0 18 18" fill="none">
+                                <svg @click="toggleModeLight" class="cursor-pointer" xmlns="http://www.w3.org/2000/svg"
+                                    width="18" height="18" viewBox="0 0 18 18" fill="none">
                                     <g clip-path="url(#clip0_1826_464)">
                                         <path
                                             d="M9 13.2188C11.33 13.2188 13.2188 11.33 13.2188 9C13.2188 6.67005 11.33 4.78125 9 4.78125C6.67005 4.78125 4.78125 6.67005 4.78125 9C4.78125 11.33 6.67005 13.2188 9 13.2188Z"
@@ -240,8 +254,8 @@
                                 </svg>
                             </div>
                             <div>
-                                <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                                    viewBox="0 0 30 30" fill="none">
+                                <svg @click="toggleMode" class="cursor-pointer" xmlns="http://www.w3.org/2000/svg"
+                                    width="30" height="30" viewBox="0 0 30 30" fill="none">
                                     <path
                                         d="M15 4.6875C15.2486 4.6875 15.4871 4.58873 15.6629 4.41291C15.8387 4.2371 15.9375 3.99864 15.9375 3.75V2.8125C15.9375 2.56386 15.8387 2.3254 15.6629 2.14959C15.4871 1.97377 15.2486 1.875 15 1.875C14.7514 1.875 14.5129 1.97377 14.3371 2.14959C14.1613 2.3254 14.0625 2.56386 14.0625 2.8125V3.75C14.0625 3.99864 14.1613 4.2371 14.3371 4.41291C14.5129 4.58873 14.7514 4.6875 15 4.6875Z"
                                         fill="#B2ABAB" />
@@ -322,7 +336,7 @@
                 </div>
                 <!--sidebar ends-->
                 <!--main sect begin-->
-                <div class="md:w-[calc(100%-0px)] w-full relative bg-[transparent] min-h-[100vh]">
+                <div @click="toggleLay" class="md:w-[calc(100%-0px)] layed w-full relative bg-[transparent] min-h-[100vh]">
                     <div class="">
                         <!--header role-->
                     </div>
@@ -335,7 +349,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, defineProps, defineEmits } from 'vue'
 import { gsap } from 'gsap'
 const month = ref("") as any
 const day = ref("") as any
@@ -344,8 +358,16 @@ const year = ref("") as any
 const menu = ref(false);
 const menus = ref(false);
 
+const { isDark, toggleMode, toggleModeLight } = defineProps(['isDark', 'toggleMode', 'toggleModeLight'])
+//@ts-ignore
 const toggleMenus = () => {
     menus.value = !menus.value
+}
+
+const toggleLay = (e: any) => {
+    if (e.target.matches('.layed')) {
+        menus.value = !menus.value
+    }
 }
 
 const toggleMenu = () => {
@@ -366,7 +388,7 @@ year.value = date.getFullYear();
 </script>
 
 <style scoped>
-.sidenav::-webkit-scrollbar{
+.sidenav::-webkit-scrollbar {
     display: none;
 }
 </style>

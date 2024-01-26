@@ -1,12 +1,8 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
-  <div class="bg-[#fafafa] min-h-[100vh] w-full md:block lg:block xl:block">
+  <div :class="isDark ? 'dark' : 'bg-[#fafafa] min-h-[100vh] w-full md:block lg:block xl:block'">
     <div class="w-full block md:flex md:flex-row">
       <div
-        class="md:w-[80px] hidden sidenav z-[200] overflow-y-scroll fixed py-[20px] md:flex md:flex-col bg-[#F7F8FA] h-full border border-[#ebecf2]">
+        :class="isDark ? 'dark overflow-y-scroll sidenav py-[20px] md:flex md:flex-col fixed z-[100] h-full border border-[#ebecf2] hidden' : 'md:w-[80px] hidden sidenav z-[200] overflow-y-scroll fixed py-[20px] md:flex md:flex-col bg-[#F7F8FA] h-full border border-[#ebecf2]'">
         <!--logo and icons part-->
         <div class="px-[20px] mb-[28px]">
           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -20,23 +16,23 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
               <path
                 d="M7.24 2H5.34C3.15 2 2 3.15 2 5.33V7.23C2 9.41 3.15 10.56 5.33 10.56H7.23C9.41 10.56 10.56 9.41 10.56 7.23V5.33C10.57 3.15 9.42 2 7.24 2Z"
-                fill="#0D062D" />
+                :fill="isDark ? '#fff' : '#0D062D'" />
               <path opacity="0.4"
                 d="M18.6699 2H16.7699C14.5899 2 13.4399 3.15 13.4399 5.33V7.23C13.4399 9.41 14.5899 10.56 16.7699 10.56H18.6699C20.8499 10.56 21.9999 9.41 21.9999 7.23V5.33C21.9999 3.15 20.8499 2 18.6699 2Z"
-                fill="#0D062D" />
+                :fill="isDark ? '#fff' : '#0D062D'" />
               <path
                 d="M18.6699 13.4301H16.7699C14.5899 13.4301 13.4399 14.5801 13.4399 16.7601V18.6601C13.4399 20.8401 14.5899 21.9901 16.7699 21.9901H18.6699C20.8499 21.9901 21.9999 20.8401 21.9999 18.6601V16.7601C21.9999 14.5801 20.8499 13.4301 18.6699 13.4301Z"
-                fill="#0D062D" />
+                :fill="isDark ? '#fff' : '#0D062D'" />
               <path opacity="0.4"
                 d="M7.24 13.4301H5.34C3.15 13.4301 2 14.5801 2 16.7601V18.6601C2 20.8501 3.15 22.0001 5.33 22.0001H7.23C9.41 22.0001 10.56 20.8501 10.56 18.6701V16.7701C10.57 14.5801 9.42 13.4301 7.24 13.4301Z"
-                fill="#0D062D" />
+                :fill="isDark ? '#fff' : '#0D062D'" />
             </svg>
           </div>
           <div>
             <svg xmlns="http://www.w3.org/2000/svg" width="3" height="21" viewBox="0 0 3 21" fill="none">
               <path
                 d="M6.53467e-06 3.02509C7.11773e-06 1.42129 1.40951 0.182713 3 0.388889V21C1.34315 21 4.88293e-07 19.6569 1.09063e-06 18L6.53467e-06 3.02509Z"
-                fill="#0D062D" />
+                :fill="isDark ? '#fff' : '#0D062D'" />
             </svg>
           </div>
         </div>
@@ -114,8 +110,8 @@
         <div class="w-full mb-[202px]">
           <div class="bg-[#fff] w-[46px] mx-auto space-y-[16px] rounded-[100px] p-[8px]">
             <div class="rounded-full bg-[#34caa5] p-[6px]">
-              <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"
-                fill="none">
+              <svg @click="toggleModeLight" class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="18"
+                height="18" viewBox="0 0 18 18" fill="none">
                 <g clip-path="url(#clip0_1826_464)">
                   <path
                     d="M9 13.2188C11.33 13.2188 13.2188 11.33 13.2188 9C13.2188 6.67005 11.33 4.78125 9 4.78125C6.67005 4.78125 4.78125 6.67005 4.78125 9C4.78125 11.33 6.67005 13.2188 9 13.2188Z"
@@ -153,8 +149,8 @@
               </svg>
             </div>
             <div>
-              <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"
-                fill="none">
+              <svg @click="toggleMode" class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                viewBox="0 0 30 30" fill="none">
                 <path
                   d="M15 4.6875C15.2486 4.6875 15.4871 4.58873 15.6629 4.41291C15.8387 4.2371 15.9375 3.99864 15.9375 3.75V2.8125C15.9375 2.56386 15.8387 2.3254 15.6629 2.14959C15.4871 1.97377 15.2486 1.875 15 1.875C14.7514 1.875 14.5129 1.97377 14.3371 2.14959C14.1613 2.3254 14.0625 2.56386 14.0625 2.8125V3.75C14.0625 3.99864 14.1613 4.2371 14.3371 4.41291C14.5129 4.58873 14.7514 4.6875 15 4.6875Z"
                   fill="#B2ABAB" />
@@ -231,10 +227,11 @@
       </div>
       <!--sidebar ends-->
       <!--main sect begin-->
-      <div class="md:w-[calc(100%-0px)] w-full border relative bg-[#fafafa] min-h-[100vh]">
+      <div
+        :class="isDark ? 'md:w-[calc(100%-0px)] w-full border relative bg-[#000] min-h-[100vh]' : 'md:w-[calc(100%-0px)] w-full border relative bg-[#fafafa] min-h-[100vh]'">
         <div class="">
           <!--header role-->
-          <Header />
+          <Header :isDark="isDark" :toggleModeLight="toggleModeLight" :toggleMode="toggleMode" />
           <Main />
         </div>
       </div>
@@ -246,10 +243,25 @@
 <script setup lang="ts">
 import Header from '@/components/Header.vue'
 import Main from '@/components/Main.vue'
+
+import { ref } from 'vue'
+const isDark = ref(false)
+
+const toggleMode = () => {
+  isDark.value = true
+}
+const toggleModeLight = () => {
+  isDark.value = false
+}
 </script>
 
-<style scoped>
+<style>
 .sidenav::-webkit-scrollbar {
   display: none;
+}
+
+.dark {
+  background: #000;
+  color: #fff;
 }
 </style>
