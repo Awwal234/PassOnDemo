@@ -358,7 +358,11 @@ const year = ref("") as any
 const menu = ref(false);
 const menus = ref(false);
 
-const { isDark, toggleMode, toggleModeLight } = defineProps(['isDark', 'toggleMode', 'toggleModeLight'])
+const props = defineProps<{
+    isDark: boolean;
+    toggleMode: ()=> void;
+    toggleModeLight: () => void;
+}>();
 //@ts-ignore
 const toggleMenus = () => {
     menus.value = !menus.value
