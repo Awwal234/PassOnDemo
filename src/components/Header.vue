@@ -349,7 +349,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, defineProps, defineEmits } from 'vue'
+import { ref, defineProps } from 'vue'
 import { gsap } from 'gsap'
 const month = ref("") as any
 const day = ref("") as any
