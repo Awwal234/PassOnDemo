@@ -12,9 +12,8 @@
                         fill="#34CAA5" />
                 </svg>
             </div>
-            <div class="md:hidden">
-                <svg @click="toggleMenus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                    fill="none">
+            <div @click="toggleMenus" class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M4 8.5H20" :stroke="isDark ? 'white' : 'black'" stroke-width="1.5" stroke-linecap="round"
                         stroke-linejoin="round" />
                     <path d="M4 15.5H20" :stroke="isDark ? 'white' : 'black'" stroke-width="1.5" stroke-linecap="round"
@@ -100,14 +99,13 @@
             </div>
         </div>
         <!--Menu-->
-        <div v-show="menus" class="fixed flex w-full md:hidden bg-[transparent] h-full top-0 left-0 z-[2000]">
-            <div class="w-full block md:flex md:flex-row">
+        <div v-show="bigM" class="fixed w-full z-[2000] md:hidden bg-[transparent] h-full top-0 left-0">
+            <div class="w-full h-full flex flex-row md:flex md:flex-row">
                 <div
-                    :class="isDark ? 'dark overflow-y-scroll sidenav py-[20px] md:flex md:flex-col fixed z-[100] h-full border border-[#ebecf2] hidden' : 'md:w-[80px] hidden sidenav z-[200] overflow-y-scroll fixed py-[20px] md:flex md:flex-col bg-[#F7F8FA] h-full border border-[#ebecf2]'">
+                    :class="isDark ? 'dark overflow-y-scroll sidenav py-[20px] md:flex md:flex-col fixed z-[3000] h-full border border-[#ebecf2]' : 'md:w-[80px] sidenav z-[200] overflow-y-scroll fixed py-[20px] md:flex md:flex-col bg-[#F7F8FA] h-full border border-[#ebecf2]'">
                     <!--logo and icons part-->
                     <div class="px-[20px] mb-[28px]">
-                        <svg @click="toggleMenus" xmlns="http://www.w3.org/2000/svg" width="40" height="40"
-                            viewBox="0 0 40 40" fill="none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M20 40C31.0457 40 40 31.0457 40 20C40 8.95431 31.0457 0 20 0C8.95429 0 0 8.95431 0 20C0 31.0457 8.95429 40 20 40ZM26.2393 9.31684C26.543 8.23805 25.4961 7.60013 24.54 8.2813L11.1931 17.7896C10.1562 18.5283 10.3193 20 11.4381 20H14.9527V19.9728H21.8025L16.2212 21.9421L13.7607 30.6832C13.457 31.762 14.5038 32.3999 15.46 31.7187L28.8069 22.2105C29.8438 21.4718 29.6806 20 28.5619 20H23.2321L26.2393 9.31684Z"
                                 fill="#34CAA5" />
@@ -356,21 +354,20 @@ const day = ref("") as any
 const year = ref("") as any
 
 const menu = ref(false);
-const menus = ref(false);
+const bigM = ref(false);
 //@ts-ignore
 const props = defineProps<{
     isDark: boolean;
     toggleMode: () => void;
     toggleModeLight: () => void;
 }>();
-//@ts-ignore
 const toggleMenus = () => {
-    menus.value = !menus.value
+    bigM.value = !bigM.value
 }
 
 const toggleLay = (e: any) => {
     if (e.target.matches('.layed')) {
-        menus.value = !menus.value
+        bigM.value = !bigM.value
     }
 }
 

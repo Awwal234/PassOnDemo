@@ -312,7 +312,7 @@
                 Book Bazar
             </div>
             <div class="w-full mb-[16px] h-fit rounded-[40px] bg-[#f5f5f5]">
-                <div class="h-[12px] lone w-[55%] rounded-[40px] bg-[#6160dc]"></div>
+                <div class="h-[12px] ltone w-[55%] rounded-[40px] bg-[#6160dc]"></div>
             </div>
             <div class="flex mb-[20px] items-center justify-between">
                 <div class="text-[#525252] leading-[26px] font-[400] plus text-[18px]">
@@ -326,7 +326,7 @@
                 Artisan Aisle
             </div>
             <div class="w-full mb-[16px] h-fit rounded-[40px] bg-[#f5f5f5]">
-                <div class="h-[12px] ltwo w-[40%] rounded-[40px] bg-[#54C5EB]"></div>
+                <div class="h-[12px] lttwo w-[40%] rounded-[40px] bg-[#54C5EB]"></div>
             </div>
             <div class="flex mb-[20px] items-center justify-between">
                 <div class="text-[#525252] leading-[26px] font-[400] plus text-[18px]">
@@ -340,7 +340,7 @@
                 Toy Troop
             </div>
             <div class="w-full mb-[16px] h-fit rounded-[40px] bg-[#f5f5f5]">
-                <div class="h-[12px] lthree w-[30%] rounded-[40px] bg-[#FFB74A]"></div>
+                <div class="h-[12px] ltthree w-[30%] rounded-[40px] bg-[#FFB74A]"></div>
             </div>
             <div class="flex mb-[20px] items-center justify-between">
                 <div class="text-[#525252] leading-[26px] font-[400] plus text-[18px]">
@@ -354,7 +354,7 @@
                 XStore
             </div>
             <div class="w-full mb-[16px] h-fit rounded-[40px] bg-[#f5f5f5]">
-                <div class="h-[12px] lfour w-[30%] rounded-[40px] bg-[#FF4A55]"></div>
+                <div class="h-[12px] ltfour w-[30%] rounded-[40px] bg-[#FF4A55]"></div>
             </div>
             <div class="flex mb-[0px] items-center justify-between">
                 <div class="text-[#525252] leading-[26px] font-[400] plus text-[18px]">
@@ -380,6 +380,11 @@ const loadlines = () => {
     gsap.fromTo('.ltwo', { x: 0, width: 0 }, { x: 0, duration: 2, width: '40%', scrollTrigger: { trigger: '.ltwo', toggleActions: 'restart' } })
     gsap.fromTo('.lthree', { x: 0, width: 0 }, { x: 0, duration: 2, width: '30%', scrollTrigger: { trigger: '.lthree', toggleActions: 'restart' } })
     gsap.fromTo('.lfour', { x: 0, width: 0 }, { x: 0, duration: 2, width: '30%', scrollTrigger: { trigger: '.lfour', toggleActions: 'restart' } })
+
+    gsap.fromTo('.ltone', { x: 0, width: 0 }, { x: 0, duration: 2, width: '55%', scrollTrigger: { trigger: '.ltone', toggleActions: 'restart' } })
+    gsap.fromTo('.lttwo', { x: 0, width: 0 }, { x: 0, duration: 2, width: '40%', scrollTrigger: { trigger: '.lttwo', toggleActions: 'restart' } })
+    gsap.fromTo('.ltthree', { x: 0, width: 0 }, { x: 0, duration: 2, width: '30%', scrollTrigger: { trigger: '.ltthree', toggleActions: 'restart' } })
+    gsap.fromTo('.ltfour', { x: 0, width: 0 }, { x: 0, duration: 2, width: '30%', scrollTrigger: { trigger: '.ltfour', toggleActions: 'restart' } })
 }
 
 onMounted(() => {
