@@ -384,19 +384,31 @@ const renderChart = () => {
                     'rgba(52, 202, 165, 0.10)',
                 ],
                 borderRadius: 20,
+                borderDash: [5, 5],
+                borderColor: '#cbd5e1',
+                
                 legend: {
                     display: false,
                 }
             }]
         },
         options: {
+            responsive: true,
+            maintainAspectRatio: false,
             scales: {
                 y: {
                     beginAtZero: true,
+                    border: {
+                        dash: [10, 6],
+                        color: '#eaeaea'
+                    },
                     grid: {
                         display: true,
-                        borderDash: [1, 1],
-                        color: '#EAEAEA'
+                        borderDash: [3, 8],
+                        lineWidth: 1,
+                        borderWidth: 1,
+                        borderColor: '#eaeaea',
+                        color: '#eaeaea'
                     }
                 },
                 x: {

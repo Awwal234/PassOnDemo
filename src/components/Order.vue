@@ -323,7 +323,7 @@
             <!--end second flex-->
         </div>
         <div
-            :class="isDark ? 'xl:w-[45%] mb-[20px] block md:hidden sdark pl-[20px] pr-[16px] pt-[16px] pb-[32px] lg:h-fit xl:h-fit lg:w-[40%] rounded-[8px]' : 'xl:w-[45%] mb-[20px] block md:hidden bg-[#fff] pl-[20px] pr-[16px] pt-[16px] pb-[32px] lg:h-fit xl:h-fit lg:w-[40%] rounded-[8px]'">
+            :class="isDark ? 'xl:w-[45%] mb-[20px] border border-[#fff] block md:hidden sdark pl-[20px] pr-[16px] pt-[16px] pb-[32px] lg:h-fit xl:h-fit lg:w-[40%] rounded-[8px]' : 'xl:w-[45%] mb-[20px] block md:hidden bg-[#fff] pl-[20px] pr-[16px] pt-[16px] pb-[32px] lg:h-fit xl:h-fit lg:w-[40%] rounded-[8px]'">
             <div class="flex mb-[20px] items-center justify-between">
                 <div
                     :class="isDark ? 'text-[#fff] leading-[26px] font-[600] plus text-[18px]' : 'text-[#26282c] leading-[26px] font-[600] plus text-[18px]'">
@@ -483,8 +483,21 @@ const loadlines = () => {
     gsap.fromTo('.ltfour', { x: 0, width: 0 }, { x: 0, duration: 2, width: '30%', scrollTrigger: { trigger: '.ltfour', toggleActions: 'restart' } })
 }
 
+const loadline = () => {
+    gsap.fromTo('.lone', { x: 0, width: 0 }, { x: 0, duration: 2, width: '55%' })
+    gsap.fromTo('.ltwo', { x: 0, width: 0 }, { x: 0, duration: 2, width: '40%' })
+    gsap.fromTo('.lthree', { x: 0, width: 0 }, { x: 0, duration: 2, width: '30%' })
+    gsap.fromTo('.lfour', { x: 0, width: 0 }, { x: 0, duration: 2, width: '30%' })
+
+    gsap.fromTo('.ltone', { x: 0, width: 0 }, { x: 0, duration: 2, width: '55%' })
+    gsap.fromTo('.lttwo', { x: 0, width: 0 }, { x: 0, duration: 2, width: '40%' })
+    gsap.fromTo('.ltthree', { x: 0, width: 0 }, { x: 0, duration: 2, width: '30%' })
+    gsap.fromTo('.ltfour', { x: 0, width: 0 }, { x: 0, duration: 2, width: '30%' })
+}
+
 onMounted(() => {
     loadlines();
+    loadline();
 })
 </script>
 
